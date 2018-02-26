@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <title>Medellin Times</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="app.js"></script>
+    </head>
+    <body ng-app="MedellinTimesFront" ng-controller="MainController">
+		<header>
+			<h1><a href="index.html">Medellin Times</a></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" class="current">Inicio</a></li>
+					<li><a href="#">Noticias y eventos</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="secwrapper">
+			<section>
+				<br></br><br></br>
+				<h1>Noticias y eventos</h1> <br></br>
+				<article ng-repeat="p in publicaciones">
+					<h2 class="centered-text">{{p.encabezado}}</h2>
+					<br></br>
+					<a href="#"><img class="centered-image" ng-src="{{p.urlImagen}}" alt=""/></a>
+					<br></br>
+					<p class="justified-text">{{p.descripcion}}</p>
+				</article>		
+				<article id="sponsors">
+					<h1>Publicidad</h1>
+					<div ng-repeat="p in publicidad">
+						<a ng-href="{{p.link}}"><img ng-src="{{p.urlImagen}}" alt="publicidad"/></a>
+					</div>
+				</article>
+			</section>
+		</div>
+		<footer>
+			<p>Copyright &copy 2018 MedellinTimes. All Rights Reserved.</p>
+		</footer>
+	</body>
+</html>
+		
+		
+			
+    
+    
